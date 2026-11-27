@@ -32,3 +32,33 @@ closeMemory.addEventListener("click", function () {
     memoryOverlay.classList.remove("show");
 });
 
+
+const letterOverlay = document.getElementById("letterOverlay");
+const closeLetter = document.getElementById("closeLetter");
+const openLetter = document.getElementById("openLetter");
+
+const envelope = document.getElementById("envelope");
+const letterContent = document.getElementById("letterContent");
+
+// Open the birthday letter popup
+openGift.addEventListener("dblclick", function () {
+    letterOverlay.classList.add("show");
+});
+
+// Open letter button
+openLetter.addEventListener("click", function () {
+
+    envelope.classList.add("opened");
+
+    letterContent.classList.add("show");
+
+    openLetter.textContent = "Your letter is open ♡";
+
+    openLetter.disabled = true;
+
+});
+
+// Close letter popup
+closeLetter.addEventListener("click", function () {
+    letterOverlay.classList.remove("show");
+});
