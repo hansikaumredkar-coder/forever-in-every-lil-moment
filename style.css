@@ -374,3 +374,133 @@ button:hover {
         font-size: 14px;
     }
 }
+
+/* Birthday letter popup */
+
+.letter-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 10, 27, 0.96);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 200;
+}
+
+.letter-overlay.show {
+    display: flex;
+}
+
+.letter-card {
+    position: relative;
+    width: min(550px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #102344;
+    border: 1px solid #5476a5;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    animation: memoryAppear 0.5s ease;
+}
+
+.close-letter {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    padding: 0 8px;
+}
+
+/* Envelope */
+
+.envelope {
+    width: 150px;
+    height: 100px;
+    margin: 30px auto;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.envelope-body {
+    position: absolute;
+    inset: 0;
+    background: #dceaff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.envelope-body span {
+    color: #18345d;
+    font-size: 35px;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-top: 65px solid #a9c9f5;
+    z-index: 2;
+    transform-origin: top;
+    transition: transform 0.6s ease;
+}
+
+.envelope.opened .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+/* Letter content */
+
+.letter-content {
+    display: none;
+    margin-top: 30px;
+    background: #f5f7fc;
+    color: #102344;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: left;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.7;
+    animation: memoryAppear 0.6s ease;
+}
+
+.letter-content.show {
+    display: block;
+}
+
+.letter-content h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+}
+
+.letter-ending {
+    text-align: right;
+    font-size: 24px;
+    font-style: italic;
+}
+
+@media (max-width: 450px) {
+    .letter-card {
+        padding: 35px 15px;
+    }
+
+    .letter-content {
+        padding: 20px;
+        font-size: 17px;
+    }
+}
