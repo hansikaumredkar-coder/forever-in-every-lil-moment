@@ -241,3 +241,136 @@ button:hover {
         opacity: 1;
     }
 }
+
+/* Memory scrapbook overlay */
+
+.memory-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 10, 27, 0.96);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 100;
+}
+
+.memory-overlay.show {
+    display: flex;
+}
+
+.memory-card {
+    position: relative;
+    width: min(650px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #102344;
+    border: 1px solid #5476a5;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    animation: memoryAppear 0.5s ease;
+}
+
+.memory-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.memory-intro {
+    color: #b8cce8;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.close-memory {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    padding: 0 8px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.polaroid {
+    background: #f5f7fc;
+    padding: 10px 10px 15px;
+    transform: rotate(-2deg);
+    box-shadow: 0 8px 20px #0003;
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.polaroid p {
+    color: #102344;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.love-note {
+    background: #dceaff;
+    color: #102344;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 12px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.love-note span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.love-note p {
+    font-size: 19px;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+@keyframes memoryAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 450px) {
+    .memory-card {
+        padding: 35px 15px 20px;
+    }
+
+    .memory-card h2 {
+        font-size: 29px;
+    }
+
+    .polaroid img {
+        height: 130px;
+    }
+
+    .polaroid p {
+        font-size: 14px;
+    }
+}
