@@ -504,3 +504,64 @@ button:hover {
         font-size: 17px;
     }
 }
+
+/* Relationship quiz */
+
+.quiz-container {
+    display: none;
+    background: #102344;
+    border: 1px solid #5476a5;
+    border-radius: 15px;
+    padding: 25px 15px;
+    margin-top: 25px;
+    animation: memoryAppear 0.5s ease;
+}
+
+.quiz-container.show {
+    display: block;
+}
+
+.quiz-container h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.quiz-options button {
+    background: #dceaff;
+    color: #102344;
+    border: 2px solid transparent;
+}
+
+.quiz-options button:hover {
+    background: #ffffff;
+}
+
+.quiz-options button.correct {
+    border-color: #8fd6b0;
+    background: #e2f8eb;
+}
+
+.quiz-options button.wrong {
+    border-color: #e6a3b0;
+    background: #ffe6eb;
+}
+
+#quizFeedback {
+    font-size: 13px;
+    color: #c6d6eb;
+    min-height: 20px;
+}
+
+#quizResult {
+    margin-top: 20px;
+    color: #dceaff;
+    line-height: 1.8;
+}
