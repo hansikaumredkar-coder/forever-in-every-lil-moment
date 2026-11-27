@@ -159,3 +159,50 @@ nextQuestion.addEventListener("click", function () {
             "You got " + score + " out of " + questions.length + "!";
     }
 });
+
+const finalSurprise = document.getElementById("finalSurprise");
+const finalOverlay = document.getElementById("finalOverlay");
+const closeFinal = document.getElementById("closeFinal");
+
+const celebrateButton = document.getElementById("celebrateButton");
+const celebrationMessage = document.getElementById("celebrationMessage");
+
+// Open the final surprise
+finalSurprise.addEventListener("click", function () {
+    finalOverlay.classList.add("show");
+});
+
+// Close the final surprise
+closeFinal.addEventListener("click", function () {
+    finalOverlay.classList.remove("show");
+});
+
+// Birthday celebration
+celebrateButton.addEventListener("click", function () {
+
+    celebrationMessage.textContent =
+        "May all your little wishes come true! ♡";
+
+    for (let i = 0; i < 15; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.classList.add("floating-heart");
+
+        heart.textContent = ["♡", "♥", "✦"][i % 3];
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        heart.style.animationDelay = Math.random() * 2 + "s";
+
+        document.body.appendChild(heart);
+
+        heart.addEventListener("animationend", function () {
+            heart.remove();
+        });
+    }
+
+    celebrateButton.textContent = "Made with love ♡";
+    celebrateButton.disabled = true;
+
+});
