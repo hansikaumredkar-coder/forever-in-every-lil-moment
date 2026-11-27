@@ -62,3 +62,9 @@ openLetter.addEventListener("click", function () {
 closeLetter.addEventListener("click", function () {
     letterOverlay.classList.remove("show");
 });
+const showLetter = document.getElementById("showLetter");
+
+showLetter.addEventListener("click", function () {
+    memoryOverlay.classList.remove("show");
+    letterOverlay.classList.add("show");
+});
